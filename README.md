@@ -28,9 +28,15 @@ so.init({
 ```
 You don't have to specify all properties, just the ones you want to override/extend.
 
-##Examples of use##
+##Usage##
 
 The simplest way to get overlay working is to put the element, that should be overlayed directly into the page:
 ```html
-<div class="so-target">This is the element that should be overlayed</div>
+<div class="so-target" id="some-div">This is the element that should be overlayed</div>
 ```
+Now you have to add a trigger element. Trigger elements are `a` tags with some special attributes:
+```html
+<a href="" class="so-trigger" data-target="some-div" data-dimensions="300-300|px:px">Click to get overlay</a>
+```
+As you can see, `div` element has `so-target` class and `id` attribute. Both are required. That class tells SimpleOverlay that this element is the target
+element and should not be displayed in browser until it is overlayed. It's done via CSS.
