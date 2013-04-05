@@ -7,10 +7,14 @@
 </head>
 <body>
     <a href="" class="so-onpage" data-target="examplediv" data-dimensions="300-300">Click to display overlayed div</a>
-    <div class="so-target" id="examplediv">This is an example div</div>
+    <div class="so-target" id="examplediv">This is an example div<br /><button id="somebutton">Click to trigger event</button></div>
 </body>
 <script src="../../lib/simpleoverlay.js"></script>
 <script>
     so.init();
+
+    so.addEventListener("click", "somebutton", function (event) {
+        alert("You've clicked a button!");
+    });
 </script>
 </html>
