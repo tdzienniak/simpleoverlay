@@ -1,0 +1,51 @@
+html, body {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.so-target {
+    display: none;
+}
+
+#so-overlay, #so-target-box {
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+#so-overlay {
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 10000;
+    opacity: 0;
+    cursor: pointer;
+}
+
+#so-target-box {
+    background: white;
+    box-shadow: 0px 0px 10px black;
+    border-radius: 5px;
+    border: 5px solid rgba(0,0,0,0.7);
+    margin: 0px auto;
+    width: 0px;
+    height: 0px;
+    overflow: hidden;
+    position: relative;
+    top: 5%;
+    z-index: 100000;
+    opacity: 0;
+    resize: both;
+}
+
+.so-loading {
+    margin: 0px auto;
+    margin-top: 45%;
+    color: gray;
+    font-family: sans-serif;
+}
