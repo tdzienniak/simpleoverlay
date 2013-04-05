@@ -36,13 +36,25 @@ You don't have to specify all properties, just the ones you want to override/ext
 
 ##Usage##
 
+You can use SimpleOverlay to overlay elements on the page, display content obtained via AJAX request or create galleries.
+
+###Elements on the page###
+
 The simplest way to get overlay working is to put the element, that should be overlayed directly into the page:
 ```html
 <div class="so-target" id="some-div">This is the element that should be overlayed</div>
 ```
 Now you have to add a trigger element. Trigger elements are `a` tags with some special attributes:
 ```html
-<a href="" class="so-trigger" data-target="some-div" data-dimensions="300-300|px:px">Click to get overlay</a>
+<a href="" class="so-onpage" data-target="some-div" data-dimensions="300-300|px:px">Click to get overlay</a>
 ```
-As you can see, `div` element has `so-target` class and `id` attribute. Both are required. That class tells SimpleOverlay that this element is the target
+As you can see, `div` element has `so-target` class and `id` attribute. Both are __required__. That class tells SimpleOverlay that this element is the target
 element and should not be displayed in browser until it is overlayed. It's done via CSS.
+
+Trigger element has to have both `data-target` and `data-dimensions` attributes set. `data-target` is simply an `id` of target element. `data-dimensions` is specially formated string.
+The format is: `width-height|widthUnit:heightUnit`. Width and height could be an exact value or `auto`. `auto` means, that SimpleOverlay will try to determine dimensions on his own. 
+You don't have to determine units. In that case just write `width-height` - default units will be used. However, if you want do set units you must set both - for width and height. Dimensions string can have also an `inherit` value. In that case you have to set width and height of target element in your style sheet (inline or in CSS file).
+
+###AJAX request content###
+Due to _same origin policy_ URL has to  
+###Single images###
