@@ -61,8 +61,24 @@ If you want to load some content to overlay using AJAX, you can do this by provi
 ```html
 <a href="content.html" class="so-resource" data-dimensions="300-300">Click to display remote content</a>
 ```
-In this particular example SimpleOverlay will put content of `content.html` file into overlay. It is recommended to provide exact (numbers) dimensions of overlay box. `href` attribute can be either a file and back-end script that returns HTML or plain text.
+In this particular example SimpleOverlay will put content of _content.html_ file into overlay. It is recommended to provide exact (numbers) dimensions of overlay box. `href` attribute can be either a file and back-end script that returns HTML or plain text.
 Due to _same origin policy_ URL has to indicate local (in range of domain) resource.
 
 ###Single images###
+
+If you set `href` attribute of trigger element to image resource and class to `so-image` SimpleOverlay will automatically load that image to overlay:
+```html
+<a href="images/myimage.png" class="so-image" title="This is my image">Click to display my image in overlay</a>
+```
+In that case you don't have to specify dimensions. They will be set automatically. SimpleOverlay will also add to overlay a `div` element with image description, if `title` attribute is set. You can customize description `div` look in _simpleoverlay.css_ file.
+
 ###Galleries of images###
+
+You can use SimpleOverlay to create galleries:
+```html
+<a href="images/image1-big.png" class="so-gallery" data-gallery="mygallery"><img src="image1-big.png" /></a>
+<a href="images/image2-big.png" class="so-gallery" data-gallery="mygallery"><img src="image2-big.png" /></a>
+<a href="images/image3-big.png" class="so-gallery" data-gallery="mygallery"><img src="image3-big.png" /></a>
+<a href="images/image4-big.png" class="so-gallery" data-gallery="mygallery"><img src="image4-big.png" /></a>
+<a href="images/image5-big.png" class="so-gallery" data-gallery="mygallery"><img src="image5-big.png" /></a>
+```
