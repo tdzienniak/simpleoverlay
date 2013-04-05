@@ -3,6 +3,12 @@ SimpleOverlay
 
 Really simple overlay, without use of jQuery and such.
 
+###Features###
+- very simple
+- written in [VanillaJS](http://vanilla-js.com/ "VanillaJS") framework, thus, no additional libraries are required
+- small size (about 5K minified)
+
+
 ##Installation##
 
 To install SimpleOverlay just add following code to `head` section of your page:
