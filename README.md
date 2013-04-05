@@ -53,8 +53,16 @@ element and should not be displayed in browser until it is overlayed. It's done 
 
 Trigger element has to have both `data-target` and `data-dimensions` attributes set. `data-target` is simply an `id` of target element. `data-dimensions` is specially formated string.
 The format is: `width-height|widthUnit:heightUnit`. Width and height could be an exact value or `auto`. `auto` means, that SimpleOverlay will try to determine dimensions on his own. 
-You don't have to determine units. In that case just write `width-height` - default units will be used. However, if you want do set units you must set both - for width and height. Dimensions string can have also an `inherit` value. In that case you have to set width and height of target element in your style sheet (inline or in CSS file).
+You don't have to determine units. In that case just write `width-height` - default units will be used. However, if you want do set units you must set both - for width and height. Units are those used to describe CSS dimensions. Dimensions string also can have `inherit` value. In that case you have to set width and height of target element in your style sheet (inline or in CSS file).
 
 ###AJAX request content###
-Due to _same origin policy_ URL has to  
+
+If you want to load some content to overlay using AJAX, you can do this by providing `href` attribute of trigger element and setting it's class to `so-resource`:
+```html
+<a href="content.html" class="so-resource" data-dimensions="300-300">Click to display remote content</a>
+```
+In this particular example SimpleOverlay will put content of `content.html` file into overlay. It is recommended to provide exact (numbers) dimensions of overlay box. `href` attribute can be either a file and back-end script that returns HTML or plain text.
+Due to _same origin policy_ URL has to indicate local (in range of domain) resource.
+
 ###Single images###
+###Galleries of images###
