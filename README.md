@@ -91,7 +91,7 @@ If you don't like default overlay appearance you can edit global SimpleOverlay C
 
 ###Closing overlay###
 
-By default overlay will be closed when you click outside the overlay box or on the close button in top right corner of that box. Hovewer, you can add close functionality to whatever you want in the target element:
+By default overlay will be closed when you click outside the overlay box or on the close button on top right corner of that box. Hovewer, you can add close functionality to whatever you want in the target element:
 ```html
 <div class="so-target" id="mydiv">
   <button class="so-close">Click me to close overlay</button>
