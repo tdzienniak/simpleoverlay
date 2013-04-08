@@ -3,6 +3,8 @@ SimpleOverlay
 
 Really simple overlay, without use of jQuery and such.
 
+__Note:__ This library in not ready yet. Not all features are implemented. When it's done, I will remove that note and add verion number.
+
 ###Features###
 - very simple
 - written in [VanillaJS](http://vanilla-js.com/ "VanillaJS") framework, thus, no additional libraries are required
@@ -68,9 +70,9 @@ Due to _same origin policy_ URL has to indicate local (in range of domain) resou
 
 If you set `href` attribute of trigger element to image resource and class to `so-image` SimpleOverlay will automatically load that image to overlay:
 ```html
-<a href="images/myimage.png" class="so-image" title="This is my image">Click to display my image in overlay</a>
+<a href="images/myimage.png" class="so-image" data-description="This is my image">Click to display my image in overlay</a>
 ```
-In that case you don't have to specify dimensions. They will be set automatically. SimpleOverlay will also add to overlay a `div` element with image description, if `title` attribute is set. You can customize description `div` look in _simpleoverlay.css_ file.
+In that case you don't have to specify dimensions. They will be set automatically. SimpleOverlay will also add a `div` element to overlay box with image description, if `data-description` attribute is set. You can customize description `div` look in _simpleoverlay.css_ file.
 
 ###Galleries of images###
 
@@ -82,3 +84,9 @@ You can use SimpleOverlay to create galleries:
 <a href="images/image4-big.png" class="so-gallery" data-gallery="mygallery"><img src="image4-big.png" /></a>
 <a href="images/image5-big.png" class="so-gallery" data-gallery="mygallery"><img src="image5-big.png" /></a>
 ```
+
+###Overriding/extending overlay box styling###
+
+If you don't like default overlay appearance you can edit global SimpleOverlay CSS file (by default in _css_ directory) or add `data-style` attribute to trigger element. This attribute must contain name of a class with your custom styles. Those CSS rules will be applied to overlay box. It means, that you can have different overlay styling for every target element. To see how it works look at the examples in _examples_ folder in this project. The most importatnt thing is to add `!important` keyword to each of your custom overlay properties. In fact, you have to add that keyword only when you are overriding property from SimpleOverlay global CSS file, not when you add one.
+
+###More customizing - the close button###

@@ -8,11 +8,11 @@ html, body {
     display: none;
 }
 
-#so-overlay, #so-target-box {
-    -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    transition: all 0.5s ease;
+#so-overlay, #so-target-box, #so-close-button {
+    -webkit-transition: opacity 0.5s ease;
+    -moz-transition: opacity 0.5s ease;
+    -o-transition: opacity 0.5s ease;
+    transition: opacity 0.5s ease;
 }
 
 #so-overlay {
@@ -40,7 +40,11 @@ html, body {
     top: 5%;
     z-index: 100000;
     opacity: 0;
-    resize: both;
+    /*resize: both;*/
+}
+
+#so-target-box:hover .so-image-description {
+    opacity: 1;
 }
 
 .so-loading {
@@ -48,4 +52,40 @@ html, body {
     margin-top: 45%;
     color: gray;
     font-family: sans-serif;
+}
+
+#so-close-button {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    background: url('../img/close.png');
+    z-index: 1000000;
+    opacity: 0;
+}
+
+#so-close-button {
+    cursor: pointer;
+}
+
+.so-image-description {
+    width: 100%;
+    position: absolute;
+    bottom: -0px;
+    left: 0px;
+    background: rgba(50,50,50,0.7);
+    box-shadow: 0px 0px 5px black;
+    opacity: 0;
+
+    -webkit-transition: opacity 0.5s ease;
+    -moz-transition: opacity 0.5s ease;
+    -o-transition: opacity 0.5s ease;
+    transition: opacity 0.5s ease;
+}
+
+.so-description-text {
+    color: rgb(230,230,230);
+    font-family: sans-serif;
+    font-size: 12pt;
+    /*as this is style for 'p' element I recommend to use margin property*/
+    margin: 10px 10px;
 }
