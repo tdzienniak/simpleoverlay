@@ -3,7 +3,7 @@ SimpleOverlay
 
 Really simple overlay, without use of jQuery and such.
 
-__Note:__ This library in not ready yet. Not all features are implemented. When it's done, I will remove that note and add verion number.
+__Note:__ This library in not ready yet. Not all features are implemented. When it's done, I will remove this note and add version number.
 
 ###Features###
 - very simple
@@ -89,4 +89,4 @@ You can use SimpleOverlay to create galleries:
 
 If you don't like default overlay appearance you can edit global SimpleOverlay CSS file (by default in _css_ directory) or add `data-style` attribute to trigger element. This attribute must contain name of a class with your custom styles. Those CSS rules will be applied to overlay box. It means, that you can have different overlay styling for every target element. To see how it works look at the examples in _examples_ folder in this project. The most importatnt thing is to add `!important` keyword to each of your custom overlay properties. In fact, you have to add that keyword only when you are overriding property from SimpleOverlay global CSS file, not when you add one.
 
-###More customizing - the close button###
+###More customization - the close button###
