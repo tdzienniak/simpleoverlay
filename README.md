@@ -89,4 +89,16 @@ You can use SimpleOverlay to create galleries:
 
 If you don't like default overlay appearance you can edit global SimpleOverlay CSS file (by default in _css_ directory) or add `data-style` attribute to trigger element. This attribute must contain name of a class with your custom styles. Those CSS rules will be applied to overlay box. It means, that you can have different overlay styling for every target element. To see how it works look at the examples in _examples_ folder in this project. The most importatnt thing is to add `!important` keyword to each of your custom overlay properties. In fact, you have to add that keyword only when you are overriding property from SimpleOverlay global CSS file, not when you add one.
 
-###More customization - the close button###
+###Closing overlay###
+
+By default overlay will be closed when you click outside the overlay box or on the close button in top right corner of that box. Hovewer, you can add close functionality to whatever you want in the target element:
+```html
+<div class="so-target" id="mydiv">
+  <button class="so-close">Click me to close overlay</button>
+</div>
+```
+As you can see, all you have to do is to add `so-close` class to any element inside target. After clicking this element, overlay will be closed.
+
+###The close button###
+###Events in overlayed elements###
+Due to some browser working mechanisms event handlers added to element that should be overlayed won't work in overlay itself. SimpleOverlay provides a method to add events to those elements.
