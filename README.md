@@ -3,13 +3,16 @@ SimpleOverlay
 
 Really simple overlay, without use of jQuery and such.
 
-__Note:__ This library in not ready yet. Not all features are implemented. When it's done, I will remove this note and add version number.
+__Note:__ This library is not ready yet. Not all features are implemented. When it's done, I will remove this note and add version number.
 
 ###Features###
 - very simple
 - written in [VanillaJS](http://vanilla-js.com/ "VanillaJS") framework, thus, no additional libraries are required
 - small size (about 5K minified)
+- multiple overlay targets (on page elements, remote files, images)
+- highly customizable (either by editing its CSS file or adding custom classes)
 
+So, if you don't like/want/have to use jQuery and its overlay plugins you can find this tiny library useful. However, if you are already using jQuery in one of your projects, it is probably better solution to use jQuery overlay plugin. There are plenty of them on the Web.
 
 ##Installation##
 
@@ -102,3 +105,11 @@ As you can see, all you have to do is to add `so-close` class to any element ins
 ###The close button###
 ###Events in overlayed elements###
 Due to some browser working mechanisms event handlers added to element that should be overlayed won't work in overlay itself. SimpleOverlay provides a method to add events to those elements.
+
+##Compatibility##
+
+SimpleOverlay is trying to perform well on any browser, but let's get it straight - the main concern is IE prior to version 9. I put an effort to get the overlay working well on them too, so things like adding event listeners and AJAX requests will work. However, most of CSS3 features that I use (transitions, shadows, border radius) won't work and I don't provide any polyfills for them. It doesn't break overlay itself, it will just look uglier (or prettier - matter of taste).
+
+##Author and license##
+
+MIT license:
