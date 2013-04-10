@@ -8,11 +8,11 @@ __Note:__ This library is not ready yet. Not all features are implemented. When 
 ###Features###
 - very simple
 - written in [VanillaJS](http://vanilla-js.com/ "VanillaJS") framework, thus, no additional libraries are required
-- small size (about 5K minified)
+- small size (about 6K minified)
 - multiple overlay targets (on page elements, remote files, images)
 - highly customizable (either by editing its CSS file or adding custom classes)
 
-So, if you don't like/want/have to use jQuery and its overlay plugins you can find this tiny library useful. However, if you are already using jQuery in one of your projects, it is probably better solution to use jQuery overlay plugin. There are plenty of them on the Web.
+So, if you don't like/want/have to use jQuery and its overlay plugins, you can find this tiny library useful. However, if you are already using jQuery in one of your projects, it is probably better solution to use jQuery overlay plugin. There are plenty of them on the Web.
 
 ##Installation##
 
@@ -80,13 +80,16 @@ In that case you don't have to specify dimensions. They will be set automaticall
 ###Galleries of images###
 
 You can use SimpleOverlay to create galleries:
+
 ```html
-<a href="images/image1-big.png" class="so-gallery" data-gallery="mygallery"><img src="image1-big.png" /></a>
-<a href="images/image2-big.png" class="so-gallery" data-gallery="mygallery"><img src="image2-big.png" /></a>
-<a href="images/image3-big.png" class="so-gallery" data-gallery="mygallery"><img src="image3-big.png" /></a>
-<a href="images/image4-big.png" class="so-gallery" data-gallery="mygallery"><img src="image4-big.png" /></a>
-<a href="images/image5-big.png" class="so-gallery" data-gallery="mygallery"><img src="image5-big.png" /></a>
+<a href="images/image1-big.png" class="so-gallery" data-gallery="mygallery"><img src="thumb1.png" /></a>
+<a href="images/image2-big.png" class="so-gallery" data-gallery="mygallery"><img src="thumb2.png" /></a>
+<a href="images/image3-big.png" class="so-gallery" data-gallery="mygallery"><img src="thumb3.png" /></a>
+<a href="images/image4-big.png" class="so-gallery" data-gallery="mygallery"><img src="thumb4.png" /></a>
+<a href="images/image5-big.png" class="so-gallery" data-gallery="mygallery"><img src="thumb5.png" /></a>
 ```
+As you can see, the way how you make galleries is similar to overlaying images. One additional attribute is `data-gallery`.
+You have to provide it. This attribute is used to simply group images together. The images with the same `data-gallery` form gallery. In this way, you can have multiple independent galleries on one page. SimpleOverlay automatically adds "Previous" and "Next" button to every image in gallery. Check out examples to see how it works and how you can customize the gallery navigation.
 
 ###Overriding/extending overlay box styling###
 
@@ -102,9 +105,12 @@ By default overlay will be closed when you click outside the overlay box or on t
 ```
 As you can see, all you have to do is to add `so-close` class to any element inside target. After clicking this element, overlay will be closed.
 
-###The close button###
 ###Events in overlayed elements###
-Due to some browser working mechanisms event handlers added to element that should be overlayed won't work in overlay itself. SimpleOverlay provides a method to add events to those elements.
+Due to some browser stuff event handlers added to the element that should be overlayed won't work in overlay. SimpleOverlay provides a method to add events to those elements. All you have to do, is to use SimpleOverlay method:
+```javascript
+so.addEventListener(selector, event, callback);
+```
+This method has a lot in common with `addEventListener` method of any DOM element. The main difference (despite slightly different arguments) is the fact, that this method adds event listener to an element that could not exist yet. It behaves like `live()` (now `on()`) method of jQuery library. In the first argument you have to provide CSS selector of element (or elements, selector could be a class) you want to add event listener to. Second is the event like "click" or "mouseover". Note, that even if you are using old IE, you don't write "onclick" or "onmouseover" - method do this automatically. The last, but not the least argument is callback. There is a standard event object passed to it, and `this` inside callback indicates (just like in normal `addEventListener`) the element that triggers the event. All arguments are required. Remember, to use this method __only__ for elements in overlay, not for normal page elements.
 
 ##Compatibility##
 

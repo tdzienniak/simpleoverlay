@@ -33,6 +33,7 @@ html, body {
     border-radius: 5px;
     border: 5px solid rgba(0,0,0,0.7);
     margin: 0px auto;
+    margin-bottom: 50px;
     width: 0px;
     height: 0px;
     overflow: hidden;
@@ -100,5 +101,25 @@ html, body {
 
     /*as this is style for 'p' element I recommend to use margin property*/
     margin: 10px 10px;
+    vertical-align: middle;
+    line-height: 1.1em;
+}
+
+.so-nav-box {
+    padding: 5px 5px;
+    margin: 0px 5px;
+    line-height: 1.1em;
+    letter-spacing: 0.2em;
+    font-weight: bold;
+    display: inline-block;
+    background-color: rgb(30,30,30);
+}
+
+.so-nav-box img {
+    vertical-align: middle;
+}
+
+.so-nav-box span {
+    margin: 0px 5px;
 }
 
