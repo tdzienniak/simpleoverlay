@@ -89,7 +89,7 @@ You can use SimpleOverlay to create galleries:
 <a href="images/image5-big.png" class="so-gallery" data-gallery="mygallery"><img src="thumb5.png" /></a>
 ```
 As you can see, the way how you make galleries is similar to overlaying images. One additional attribute is `data-gallery`.
-You have to provide it. This attribute is used to simply group images together. The images with the same `data-gallery` form gallery. In this way, you can have multiple independent galleries on one page. SimpleOverlay automatically adds "Previous" and "Next" button to every image in gallery. Check out examples to see how it works and how you can customize the gallery navigation.
+You have to provide it. This attribute is used to simply group images together. The images with the same `data-gallery` form gallery. In this way, you can have multiple independent galleries on one page. SimpleOverlay automatically adds "Previous" and "Next" button to every image in gallery. Check out exemples to see how it works and how you can customize the gallery navigation.
 
 ###Overriding/extending overlay box styling###
 
